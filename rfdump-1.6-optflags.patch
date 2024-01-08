@@ -1,0 +1,19 @@
+--- a/configure
++++ b/configure
+@@ -4985,16 +4985,11 @@
+ fi
+ 
+ if test "x$enable_debug" = "xyes"; then
+-         # remove -O flags from CFLAGS
+-         CFLAGS=`perl -e '$ARGV0=~s/-O\d?//g;print $ARGV0' -- "$CFLAGS"`
+          # add debug parameters
+          CFLAGS="$CFLAGS -g -DDEBUG -DDOJDEBUG"
+          { echo "$as_me:$LINENO: result: yes" >&5
+ echo "${ECHO_T}yes" >&6; }
+ else
+-         # remove -g flags from CFLAGS
+-         CFLAGS=`perl -e '$ARGV0=~s/-g//g;print $ARGV0' -- "$CFLAGS"`
+-         CFLAGS="$CFLAGS -O2"
+          { echo "$as_me:$LINENO: result: no" >&5
+ echo "${ECHO_T}no" >&6; }
+ fi
